@@ -1,91 +1,84 @@
+
 # MariFlow — Student Finance Tracker
 
-**A responsive, student-focused personal finance management application built with HTML, CSS, and JavaScript.**
+**Live Demo:** https://tmachingur-code.github.io/student-finance-tracker/  
+**GitHub Repository:** https://github.com/tmachingur-code/student-finance-tracker
 
-## 1. Project Overview
+## 1. Overview
 
-MariFlow is a web-based Student Finance Tracker designed to help students manage their money, record income and expenses, monitor spending, and develop better budgeting habits.
+MariFlow is a responsive student finance tracker built with HTML, CSS, and vanilla JavaScript. It helps students record income and expenses, manage budgets, and understand their spending habits.
 
-The project focuses on creating a simple, accessible, and responsive interface that works across desktop computers, tablets, and mobile devices. It is being developed incrementally through milestones, from the initial project setup to validation, transaction management, data persistence, and final testing.
+**Theme:** Professional navy blue, white, and muted gold.
 
-## 2. Project Objectives
+## 2. Features
 
-The main objectives of MariFlow are to:
+- Dashboard with income, expenses, remaining budget, and spending insights.
+- Add, edit, and delete transactions.
+- Search, filter, and sort transactions.
+- Validate descriptions, amounts, categories, dates, and payment statuses.
+- Set monthly budgets and monitor spending.
+- Display currency in RWF, USD, or EUR using configurable exchange rates.
+- Save data in browser `localStorage`.
+- Export and import validated JSON backups.
+- Responsive layouts for desktop, tablet, and mobile.
 
-- Help students record and organise their income and expenses.
-- Provide a clear overview of personal financial activity.
-- Support budgeting and spending awareness.
-- Validate user input using JavaScript and regular expressions.
-- Provide a responsive interface for different screen sizes.
-- Support accessible navigation and meaningful validation feedback.
-- Preserve financial records using browser storage.
-- Support JSON data export and import.
+## 3. Technologies
 
-## 3. Key Features
+- HTML5 — semantic structure and forms
+- CSS3 — styling and responsive layouts
+- JavaScript ES modules — application logic and interactivity
+- Regular expressions — input validation and search
+- Local Storage — browser-based persistence
+- JSON — data backup and restoration
+- GitHub Pages — deployment
 
-### Dashboard and Responsive Interface
-- Student-focused financial dashboard.
-- Summary cards for income, expenses, remaining budget, and spending categories.
-- Navigation adapted for desktop and mobile devices.
-- Navy blue, white, and muted gold visual theme.
+## 4. Regex Catalog
 
-### Transaction Management
-- Record income and expenses.
-- Categorise financial transactions.
-- Record transaction dates and payment status.
-- Search, filter, and sort transaction records.
-- Edit or delete transactions.
+The following patterns document the validation rules used by the application. Additional JavaScript checks may also apply.
 
-### Form Validation
-- Validate transaction descriptions, amounts, categories, dates, types, and payment statuses.
-- Use regular expressions to validate input formats.
-- Detect repeated consecutive words in descriptions.
-- Display field-level error messages.
-- Direct keyboard focus to invalid fields when form submission fails.
+| Rule | Pattern | Example |
+|---|---|---|
+| Description whitespace | `/^\S(?:.*\S)?$/` | Valid: `Food shopping`; invalid: ` Food ` |
+| Repeated words | `/\b([a-z]+)\s+\1\b/i` | Detects `food food` |
+| Amount format | `/^(?:0\|[1-9]\d*)(?:\.\d{1,2})?$/` | Valid: `1250`, `45.50` |
+| Category format | `/^[A-Za-z]+(?:[ -][A-Za-z]+)*$/` | Valid format: `Food`, `Health Care` |
+| Date format | `/^\d{4}-(0[1-9]\|1[0-2])-(0[1-9]\|[12]\d\|3[01])$/` | Valid format: `2026-10-17` |
 
-### Budgeting and Financial Insights
-- Configure a monthly spending budget.
-- Display financial summaries.
-- Monitor budget usage and spending by category.
-- View spending trends.
+Additional validation rules require positive amounts, permitted categories, real calendar dates, transaction types of `income` or `expense`, and statuses of `paid` or `planned`.
 
-### Data Persistence and Backup
-- Store financial data in browser local storage.
-- Export financial records to JSON.
-- Import validated JSON backups.
-- Configure display currency and manual exchange rates.
+## 5. Keyboard Map
 
-**Development status:** The project is being implemented and tested milestone by milestone. Features should be considered complete only after their implementation has been verified.
-
-## 4. Technologies Used
-
-| Technology | Purpose |
+| Key | Action |
 |---|---|
-| HTML5 | Semantic page structure and forms |
-| CSS3 | Layout, styling, and responsive design |
-| JavaScript (ES Modules) | Application logic, validation, and interactions |
-| Regular Expressions | Input validation and search patterns |
-| Local Storage | Browser-based data persistence |
-| JSON | Data exchange and backup |
-| Git and GitHub | Version control and project collaboration |
+| `Tab` | Move to the next focusable control |
+| `Shift + Tab` | Move to the previous control |
+| `Enter` | Activate links or buttons; submit forms where applicable |
+| `Space` | Activate focused buttons or checkboxes where supported |
+| Arrow keys | Navigate native controls such as select menus |
 
-The project uses vanilla HTML, CSS, and JavaScript without a frontend framework.
+## 6. Accessibility
 
-## 5. Project Structure
+MariFlow includes:
+
+- Semantic HTML and a skip-to-content link.
+- Labels for form controls.
+- Visible keyboard focus indicators.
+- Field-level validation messages and invalid-field focus.
+- Accessible status and feedback messages.
+- Responsive layouts and reduced-motion considerations.
+
+Icon-only controls and keyboard interactions should be verified during final testing.
+
+## 7. Project Structure
 
 ```text
 student-finance-tracker/
-│
 ├── index.html
 ├── README.md
 ├── seed.json
-├── .gitignore
-│
 ├── assets/
-│
 ├── styles/
 │   └── main.css
-│
 ├── scripts/
 │   ├── app.js
 │   ├── currency.js
@@ -94,103 +87,49 @@ student-finance-tracker/
 │   ├── storage.js
 │   ├── ui.js
 │   └── validators.js
-│
 └── tests/
     ├── tests.html
-    └── validators.test.js
-    └── dashboard.html
+    ├── validators.test.js
+    ├── dashboard.html
     └── dashboard.test.js
-
 ```
 
-## 6. Getting Started
+## 8. Run Locally
 
-### Prerequisites
+Requirements: a modern browser, a code editor, Git, and a local development server.
 
-- A modern web browser, such as Firefox or Google Chrome.
-- Visual Studio Code or another code editor.
-- Git for version control.
-- A local development server, such as the VS Code Live Server extension.
+```bash
+git clone https://github.com/tmachingur-code/student-finance-tracker.git
+cd student-finance-tracker
+code .
+```
 
-### Installation
+Start Live Server from `index.html`. A local server is recommended because the project uses JavaScript ES modules.
 
-1. Clone the repository:
+## 9. Run Tests
 
-   ```bash
-   git clone https://github.com/tmachingur-code/student-finance-tracker.git
-   ```
+With the local server running, open:
 
-2. Enter the project directory:
+- `tests/tests.html` — validation tests.
+- `tests/dashboard.html` — dashboard calculation tests.
 
-   ```bash
-   cd student-finance-tracker
-   ```
+Review the results and fix failing tests before committing changes.
 
-3. Open the folder in Visual Studio Code:
-
-   ```bash
-   code .
-   ```
-
-4. Start the local development server and open `index.html` in your browser.
-
-A local server is recommended because the application uses JavaScript ES modules.
-
-## 7. Running the Validation Tests
-
-MariFlow includes a browser-based test page for checking input validation.
-
-1. Start your local server.
-2. Open `tests/tests.html` in your browser through that server.
-3. Review the test summary and individual results.
-4. Investigate and correct any failing tests before committing changes.
-
-The validation tests cover descriptions, amounts, categories, dates, transaction types, payment statuses, and complete transaction objects.
-
-## 8. Accessibility and Responsive Design
-
-MariFlow aims to provide an accessible experience through:
-
-- Semantic HTML elements.
-- A skip-to-main-content link.
-- Visible keyboard focus indicators.
-- Labels associated with form controls.
-- Accessible validation messages.
-- Responsive layouts for different screen sizes.
-- Reduced-motion support.
-
-Accessibility and responsive behaviour should be verified through browser testing as development progresses.
-
-## 9. Development Milestones
-
-The project is organised into the following milestones:
+## 10. Development Milestones
 
 | Milestone | Focus |
 |---|---|
-| M0 | Project environment and repository setup |
-| M1 | Requirements, data model, and project specification |
-| M2 | Semantic HTML and responsive base CSS |
-| M3 | Form validation and regular expressions |
-| M4 | Transaction management, searching, filtering, and sorting |
-| M5 | Dashboard calculations, budget progress, and spending insights |
-| M6 | Data persistence, currency settings, and JSON backup |
-| M7 | Final testing, accessibility checks, documentation, and submission |
+| M0 | Project setup |
+| M1 | Requirements and data model |
+| M2 | HTML and responsive CSS |
+| M3 | Validation and regular expressions |
+| M4 | Transaction management and search |
+| M5 | Dashboard and budgeting |
+| M6 | Persistence, currency, and JSON backups |
+| M7 | Final testing, accessibility, and deployment |
 
-Milestone completion is determined by implementation, testing, and the applicable project requirements.
+## 11. Data and Privacy
 
-## 10. Data and Privacy
+MariFlow stores transactions and settings in browser local storage. Clearing browser data may remove saved records. Export important records regularly and avoid storing sensitive financial information on shared devices.
 
-MariFlow is designed for browser-based personal finance tracking. Financial records may be stored in the browser's local storage.
-
-Users should export important records for backup and avoid using shared or public devices for sensitive financial information. Clearing browser storage may remove locally saved records.
-
-## 11. Future Improvements
-
-Potential improvements include:
-
-- Additional financial reports and visualisations.
-- Improved transaction categorisation.
-- More comprehensive validation and accessibility testing.
-- Further usability enhancements based on student feedback.
-
----
+Currency conversion uses configured exchange rates; it does not provide live market rates.
