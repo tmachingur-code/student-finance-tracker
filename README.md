@@ -1,8 +1,9 @@
 
 # MariFlow : Student Finance Tracker
 
-**Live Demo:** https://tmachingur-code.github.io/student-finance-tracker/  
+**Github pages URL:** https://tmachingur-code.github.io/student-finance-tracker/  
 **GitHub Repository:** https://github.com/tmachingur-code/student-finance-tracker
+**Video Demo:**  https://youtu.be/NmkWpt-iKmw?si=gxJ6f5mXBfFInGb0
 
 ## 1. Overview
 
