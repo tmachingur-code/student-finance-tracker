@@ -184,13 +184,3 @@ MariFlow is designed for browser-based personal finance tracking. Financial reco
 
 Users should export important records for backup and avoid using shared or public devices for sensitive financial information. Clearing browser storage may remove locally saved records.
 
-## 11. Future Improvements
-
-Potential improvements include:
-
-- Additional financial reports and visualisations.
-- Improved transaction categorisation.
-- More comprehensive validation and accessibility testing.
-- Further usability enhancements based on student feedback.
-
----

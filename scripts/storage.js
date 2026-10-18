@@ -1,10 +1,9 @@
-
 /**
- * PesaFlow — Student Finance Tracker
+ * MariFlow — Student Finance Tracker
  * M6: Transaction persistence
  */
 
-const TRANSACTIONS_STORAGE_KEY = "pesaFlow.transactions";
+const TRANSACTIONS_STORAGE_KEY = "studentFinanceTracker.transactions";
 
 export function loadTransactions() {
     try {
@@ -26,6 +25,11 @@ export function loadTransactions() {
 }
 
 export function saveTransactions(transactions) {
+    if (!Array.isArray(transactions)) {
+        console.error("Cannot save transactions: expected an array.");
+        return false;
+    }
+
     try {
         localStorage.setItem(
             TRANSACTIONS_STORAGE_KEY,
@@ -34,7 +38,7 @@ export function saveTransactions(transactions) {
 
         return true;
     } catch (error) {
-        console.error("Could not save transactions:", error);
+        console.error("Could not save transactions:" , error);
         return false;
     }
 }

@@ -4,6 +4,8 @@ import {
     updateSpendingBreakdown
 } from "../scripts/ui.js";
 
+localStorage.setItem("mariflow.displayCurrency", "RWF");
+
 const results = [];
 
 function test(name, callback) {
@@ -73,7 +75,7 @@ function createDashboardFixture() {
             <div class="budget-progress-fill"></div>
         </article>
 
-        <div id="spending-breakdown"></div>
+        <div id="spending-breakdown"></div> 
     `;
 }
 
@@ -187,11 +189,11 @@ test("Spending breakdown includes current-month expense categories", () => {
 });
 
 document.body.innerHTML += `
-    <section id="test-results">
+    <section id = "test-results" >
         <h1>M5 Dashboard Test Results</h1>
         <p id="test-summary"></p>
         <ul id="test-list"></ul>
-    </section>
+    </section >
 `;
 
 const passed = results.filter((result) => result.passed).length;
@@ -203,8 +205,8 @@ summary.textContent = `${passed} of ${results.length} tests passed.`;
 results.forEach((result) => {
     const item = document.createElement("li");
     item.textContent = result.passed
-        ? `PASS: ${result.name}`
-        : `FAIL: ${result.name} — ${result.error}`;
+        ? `PASS: ${result.name} `
+        : `FAIL: ${result.name} — ${result.error} `;
 
     item.style.color = result.passed ? "green" : "red";
     list.appendChild(item);

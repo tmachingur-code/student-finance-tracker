@@ -1,0 +1,48 @@
+[
+    {
+        "id": "seed_001",
+        "description": "Monthly student allowance",
+        "amount": 150000,
+        "type": "income",
+        "category": "Income",
+        "date": "2026-10-02",
+        "createdAt": "2026-10-02T08:00:00.000Z",
+        "updated": "2026-10-02T08:00:00.000Z",
+        "status": "paid"
+    },
+
+    {
+        "id": "seed_002",
+        "description": "Weekly groceries",
+        "amount": 25000,
+        "type": "expense",
+        "category": "Food",
+        "date": "2026-10-07",
+        "createdAt": "2026-10--07T09:00:00.000Z",
+        "updatedAt": "2026-10-07T09:00:00.000Z",
+        "status": "paid"
+    },
+
+    {
+      "id": "seed_003",
+      "description": "Traansport to campus",
+      "amount": 5000,
+      "type": "expense",
+      "category": "Transport",
+      "date": "2026-10-12",
+      "createdAt": "2026-10-12T07:00:00.000Z",
+      "updatedAt": "2026-10-12T07:00:00.000Z",
+      "status": "paid"
+    },
+
+    {
+        "id": "seed_004",
+        "ldescription": "Internet subscription",
+        "amount": 10000,
+        "type": "expense",
+        "category": "Utilities",
+        "date": "2026-10-18",
+        "createdAt": "2026-10-18T08:00:00.000Z",
+        "status": "paid"
+    }
+]

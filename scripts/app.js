@@ -737,3 +737,50 @@ if (importInput && backupFeedback) {
         }
     });
 }
+
+//Initialize sample data for a new Mariflow user
+const SEED_INITIALIZED_KEY = "mariflow.seedInitialized";
+
+async function initializeSeedData() {
+    try{
+        //Do not repeatedly load sample data
+        if (localStorage.getItem(SEED_INITIALIZED_KEY) === "true") {
+            return;
+        }
+
+        //Preserve existing user transactions
+        if (getTransactions().length > 0){
+            localStorage.setItem(SEED_INITIALIZED_KEY, "true");
+            return;
+        }
+
+        const response = await fetch("./seed.json");
+
+        if (!response.ok) {
+            throw new Error("Could not load seed.json");
+        }
+
+        const seedTransactions = await response.json();
+
+        if(!Array.isArray(seedTransactions)) {
+            throw new Error("Seed data must be an array.");
+        }
+
+        //Check again in case transactions were added while loading.
+        if (getTransactions().length > 0) {
+            localStorage.setItem(SEED_INITIALIZED_KEY, "true");
+            return;
+        }
+
+        //state.js validates the records before saving.
+        setTransactions(seedTransactions);
+
+        localStorage.setItem(SEED_INITIALIZED_KEY, "true");
+
+        //Refresh the dashboard and transaction list.
+        refreshTransactions();
+    } catch (error) {
+        console.error("Sample data initialization failed:", error);
+    }
+}
+initializeSeedData();
