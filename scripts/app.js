@@ -762,6 +762,7 @@ async function initializeSeedData() {
 
         const seedTransactions = await response.json();
 
+
         if(!Array.isArray(seedTransactions)) {
             throw new Error("Seed data must be an array.");
         }
@@ -779,6 +780,8 @@ async function initializeSeedData() {
 
         //Refresh the dashboard and transaction list.
         refreshTransactions();
+
+
     } catch (error) {
         console.error("Sample data initialization failed:", error);
     }
