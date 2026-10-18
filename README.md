@@ -98,9 +98,10 @@ student-finance-tracker/
 └── tests/
     ├── tests.html
     └── validators.test.js
-```
+    └── dashboard.html
+    └── dashboard.test.js
 
-*Note: The structure above represents the intended project organisation. Keep the README aligned with the files and folders actually present in your repository.*
+```
 
 ## 6. Getting Started
 
@@ -192,12 +193,4 @@ Potential improvements include:
 - More comprehensive validation and accessibility testing.
 - Further usability enhancements based on student feedback.
 
-## 12. Author and Project Information
-
-**Project:** MariFlow — Student Finance Tracker  
-**Developer:** Tsungirirai Machingura  
-**Repository:** [GitHub — Student Finance Tracker](https://github.com/tmachingur-code/student-finance-tracker)
-
 ---
-
-*MariFlow — Your money. Your decisions.*
