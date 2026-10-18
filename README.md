@@ -1,5 +1,5 @@
 
-# MariFlow — Student Finance Tracker
+# MariFlow : Student Finance Tracker
 
 **Live Demo:** https://tmachingur-code.github.io/student-finance-tracker/  
 **GitHub Repository:** https://github.com/tmachingur-code/student-finance-tracker
@@ -24,13 +24,13 @@ MariFlow is a responsive student finance tracker built with HTML, CSS, and vanil
 
 ## 3. Technologies
 
-- HTML5 — semantic structure and forms
-- CSS3 — styling and responsive layouts
-- JavaScript ES modules — application logic and interactivity
-- Regular expressions — input validation and search
-- Local Storage — browser-based persistence
-- JSON — data backup and restoration
-- GitHub Pages — deployment
+- HTML5: semantic structure and forms
+- CSS3:  styling and responsive layouts
+- JavaScript ES modules: application logic and interactivity
+- Regular expressions: input validation and search
+- Local Storage: browser-based persistence
+- JSON: data backup and restoration
+- GitHub Pages: deployment
 
 ## 4. Regex Catalog
 
