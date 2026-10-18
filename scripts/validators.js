@@ -1,5 +1,5 @@
 /**
- * PesaFlow — Student Finance Tracker
+ * MariFlow — Student Finance Tracker
  * M3: Form validation and regular expressions
  */
 

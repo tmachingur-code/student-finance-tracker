@@ -1,6 +1,6 @@
 import { formatCurrency } from "./currency.js";
 /**
- * PesaFlow — Student Finance Tracker
+ * MariFlow - Student Finance Tracker
  * M4: Transaction rendering
  */
 
@@ -133,7 +133,7 @@ export function updateSpendingTrend(transactions) {
         });
 
     // Keep the vertical axis consistent with the chart's 150K maximum.
-    const chartMaximum = 150000;
+    const chartMaximum = 100000;
 
     chart.innerHTML = days.map((day) => {
         const height = chartMaximum > 0

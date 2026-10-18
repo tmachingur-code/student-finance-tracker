@@ -1,5 +1,5 @@
 /**
- * PesaFlow — Student Finance Tracker
+ * MariFlow - Student Finance Tracker
  * M4: Regex search, filtering, and sorting
  */
 
